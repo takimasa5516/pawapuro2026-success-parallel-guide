@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { heroinesData } from "../data/gameData";
 import { HeroineInfo } from "../types";
-import { Heart, Sparkles, MapPin } from "lucide-react";
+import { Heart, Sparkles, MapPin, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 
 export const HeroineSection: React.FC = () => {
   const [selectedHeroine, setSelectedHeroine] = useState<HeroineInfo>(heroinesData[0]);
   const [position, setPosition] = useState<"pitcher" | "fielder">("pitcher");
+  const [expandedDateStep, setExpandedDateStep] = useState<string | null>("デート 4回目");
+
+  const toggleExpand = (stepName: string) => {
+    setExpandedDateStep((prev) => (prev === stepName ? null : stepName));
+  };
 
   return (
     <div className="space-y-6">
@@ -15,10 +20,10 @@ export const HeroineSection: React.FC = () => {
           <div>
             <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <Heart className="w-5 h-5 text-rose-500 fill-rose-500" />
-              彼女攻略・入手できる金特一覧
+              彼女攻略・デート選択肢＆金特完全データ
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
-              パラレルオールスターズで登場する4名のヒロイン。知合い方・同行仕様・デート4回目の金特選択肢を網羅。
+              全4名の知合い方、出現時空、同行仕様、ラブパワー恩恵、およびデート1〜6回目の全選択肢・獲得コツを完全網羅！
             </p>
           </div>
 
@@ -32,7 +37,7 @@ export const HeroineSection: React.FC = () => {
                   : "text-slate-300 hover:text-white"
               }`}
             >
-              ⚾ 投手用金特
+              ⚾ 投手効果・金特
             </button>
             <button
               onClick={() => setPosition("fielder")}
@@ -42,7 +47,7 @@ export const HeroineSection: React.FC = () => {
                   : "text-slate-300 hover:text-white"
               }`}
             >
-              🏏 野手用金特
+              🏏 野手効果・金特
             </button>
           </div>
         </div>
@@ -54,7 +59,10 @@ export const HeroineSection: React.FC = () => {
             return (
               <button
                 key={h.id}
-                onClick={() => setSelectedHeroine(h)}
+                onClick={() => {
+                  setSelectedHeroine(h);
+                  setExpandedDateStep("デート 4回目");
+                }}
                 className={`p-3 rounded-xl border text-left transition-all relative overflow-hidden ${
                   isSelected
                     ? "bg-slate-800 border-rose-500/80 shadow-md shadow-rose-500/10 ring-2 ring-rose-500/30"
@@ -111,7 +119,7 @@ export const HeroineSection: React.FC = () => {
             <div className="bg-slate-950/80 rounded-xl p-4 border border-slate-800">
               <h4 className="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
                 <MapPin className="w-4 h-4" />
-                知合い方・出現時空・同行
+                知合い方・出現時空・同行仕様
               </h4>
               <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
                 {selectedHeroine.howToMeet}
@@ -129,12 +137,12 @@ export const HeroineSection: React.FC = () => {
             </div>
           </div>
 
-          {/* デート4回目（イベント04）の金特選択肢対比カード */}
+          {/* デート4回目（イベント04）の金特ハイライト対比カード */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>デート4回目（イベント04）の金特選択肢</span>
+                <span>金特獲得イベント（デート4回目）の選択肢分岐</span>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
                   {position === "pitcher" ? "投手時" : "野手時"}
                 </span>
@@ -144,7 +152,7 @@ export const HeroineSection: React.FC = () => {
             {position === "pitcher" ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* 選択肢上 */}
-                <div className="bg-slate-950/90 rounded-xl p-4 border border-blue-500/40 relative overflow-hidden">
+                <div className="bg-slate-950/90 rounded-xl p-4 border border-blue-500/50 relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl">
                     選択肢［上］
                   </div>
@@ -163,7 +171,7 @@ export const HeroineSection: React.FC = () => {
                 </div>
 
                 {/* 選択肢下 */}
-                <div className="bg-slate-950/90 rounded-xl p-4 border border-purple-500/40 relative overflow-hidden">
+                <div className="bg-slate-950/90 rounded-xl p-4 border border-purple-500/50 relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl">
                     選択肢［下］
                   </div>
@@ -184,7 +192,7 @@ export const HeroineSection: React.FC = () => {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* 選択肢上 */}
-                <div className="bg-slate-950/90 rounded-xl p-4 border border-blue-500/40 relative overflow-hidden">
+                <div className="bg-slate-950/90 rounded-xl p-4 border border-blue-500/50 relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl">
                     選択肢［上］
                   </div>
@@ -203,7 +211,7 @@ export const HeroineSection: React.FC = () => {
                 </div>
 
                 {/* 選択肢下 */}
-                <div className="bg-slate-950/90 rounded-xl p-4 border border-purple-500/40 relative overflow-hidden">
+                <div className="bg-slate-950/90 rounded-xl p-4 border border-purple-500/50 relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl">
                     選択肢［下］
                   </div>
@@ -222,6 +230,133 @@ export const HeroineSection: React.FC = () => {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* デート全イベント詳細（1回目〜6回目） */}
+          <div className="space-y-3 pt-2">
+            <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-pink-400" />
+              <span>デート進行別 全選択肢・効果・特能コツ一覧</span>
+            </h4>
+
+            <div className="space-y-2">
+              {selectedHeroine.dateEvents.map((event, eIdx) => {
+                const isExpanded = expandedDateStep === event.stepName;
+                const effect = position === "pitcher" ? event.pitcherEffect : event.fielderEffect;
+
+                return (
+                  <div
+                    key={eIdx}
+                    className={`rounded-xl border transition-all overflow-hidden ${
+                      event.isGoldSkill
+                        ? "bg-slate-900 border-amber-500/50 ring-1 ring-amber-500/20"
+                        : "bg-slate-950/70 border-slate-800"
+                    }`}
+                  >
+                    {/* イベントタイトル行（アコーディオンヘッダー） */}
+                    <button
+                      onClick={() => toggleExpand(event.stepName)}
+                      className="w-full p-3 sm:p-3.5 flex items-center justify-between text-left hover:bg-slate-800/40 transition-colors"
+                    >
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        <span
+                          className={`text-xs font-bold px-2 py-0.5 rounded ${
+                            event.isGoldSkill
+                              ? "bg-amber-500 text-slate-950"
+                              : "bg-slate-800 text-slate-300"
+                          }`}
+                        >
+                          {event.stepName}
+                        </span>
+                        <span className="text-xs sm:text-sm font-bold text-white">
+                          {event.title}
+                        </span>
+                        <span className="text-[11px] text-slate-400 hidden sm:inline">
+                          — {event.description}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2 shrink-0">
+                        {isExpanded ? (
+                          <ChevronUp className="w-4 h-4 text-slate-400" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 text-slate-400" />
+                        )}
+                      </div>
+                    </button>
+
+                    {/* イベント詳細コンテンツ */}
+                    {isExpanded && (
+                      <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/90 space-y-2 text-xs">
+                        {effect.hasChoice && effect.choices ? (
+                          <div className="space-y-2">
+                            {effect.choices.map((ch, chIdx) => (
+                              <div
+                                key={chIdx}
+                                className="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                              >
+                                <div className="space-y-1">
+                                  <div className="font-bold text-blue-400 flex items-center gap-1.5">
+                                    <span>{ch.text}</span>
+                                    {ch.note && (
+                                      <span className="text-[10px] text-amber-300/80 font-normal">
+                                        ({ch.note})
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="text-[11px] text-emerald-400 font-mono">
+                                    {ch.stats}
+                                  </div>
+                                </div>
+
+                                {ch.skills.length > 0 && (
+                                  <div className="flex flex-wrap gap-1 shrink-0">
+                                    {ch.skills.map((sk, skIdx) => (
+                                      <span
+                                        key={skIdx}
+                                        className={`px-2 py-0.5 rounded font-bold text-xs ${
+                                          sk.includes("✨")
+                                            ? "bg-amber-400 text-slate-950 shadow-sm"
+                                            : "bg-blue-950 text-blue-200 border border-blue-800/40"
+                                        }`}
+                                      >
+                                        {sk}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div className="space-y-1">
+                              <span className="text-slate-400 font-medium">獲得効果:</span>
+                              <div className="text-[11px] text-emerald-400 font-mono">
+                                {effect.directStats}
+                              </div>
+                            </div>
+
+                            {effect.directSkills && effect.directSkills.length > 0 && (
+                              <div className="flex flex-wrap gap-1 shrink-0">
+                                {effect.directSkills.map((sk, skIdx) => (
+                                  <span
+                                    key={skIdx}
+                                    className="px-2 py-0.5 rounded font-bold text-xs bg-blue-950 text-blue-200 border border-blue-800/40"
+                                  >
+                                    {sk}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* 育成ワンポイントアドバイス */}

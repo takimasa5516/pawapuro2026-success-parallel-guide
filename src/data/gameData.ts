@@ -1,7 +1,7 @@
 import { FlowStep, HeroineInfo, ComboEvent, StrategyTip } from "../types";
 
 // ==========================================
-// 1. フローチャートデータ (Excel参照)
+// 1. フローチャートデータ (Excelまとめ完全準拠)
 // ==========================================
 
 export const pitcherFlow: FlowStep[] = [
@@ -13,9 +13,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 白2",
     cores: "0",
     spaceTimeLv: "1",
-    notes: "最序盤。四条の好感度上げ＆進を同行させる",
-    pair: "黒珠 ＋ 松倉",
-    choice: "【黒珠の練習相手になる】スタミナLv3",
+    recruitMember: "猪狩 進（同行加入）",
+    notes: "最序盤。四条澄香の練習を追って好感度上げ＆猪狩進を同行加入させる。\n※右側のコンボは対象キャラ（黒珠・松倉）が揃った後にランダム発生します。",
+    targetCombo: "黒珠 ＋ 松倉",
+    comboChoice: "【黒珠の練習相手になる】スタミナLv3",
     highlight: true,
   },
   {
@@ -26,9 +27,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "青6 / 白2",
     cores: "1",
     spaceTimeLv: "2",
-    notes: "No2, 3, 4は状況に応じて入れ替え可能",
-    pair: "あおい ＋ ハルキ",
-    choice: "【話題をすり替える】コントロールLv3",
+    recruitMember: "松倉 宗光（加入）",
+    notes: "No2, 3, 4は状況に応じて入れ替え可能。パワフルで松倉が加入。",
+    targetCombo: "あおい ＋ ハルキ",
+    comboChoice: "【話題をすり替える】コントロールLv3",
     highlight: true,
   },
   {
@@ -39,9 +41,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "緑4 / 白2",
     cores: "1",
     spaceTimeLv: "3",
-    notes: "時空エネルギーを効率よく回収",
-    pair: "神宮寺 ＋ 美一式",
-    choice: "【アイドルになればモテモテだ！】球速Lv3",
+    recruitMember: "ブラック（加入）",
+    notes: "時空エネルギーを効率よく回収。",
+    targetCombo: "神宮寺 ＋ 美一式",
+    comboChoice: "【アイドルになればモテモテだ！】球速Lv3",
     highlight: true,
   },
   {
@@ -52,9 +55,11 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "1",
     spaceTimeLv: "4",
-    notes: "あおいを加入させて同行枠を確保",
-    pair: "進 ＋ 聖",
-    choice: "【ふたり同時に練習！】低め◯ / 【日替わり】重い球",
+    recruitMember: "早川 あおい（同行加入） / 六道 聖（加入）",
+    notes: "あおいを同行枠に加入。あかつきで連れてきた進とここで聖が揃い【進＋聖】コンボ発生可能に！",
+    targetCombo: "進 ＋ 聖",
+    comboChoice: "【ふたり同時に練習！】低め◯ / 【日替わり】重い球",
+    highlight: true,
   },
   {
     no: 5,
@@ -64,9 +69,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "全種5",
     cores: "1",
     spaceTimeLv: "5",
-    notes: "基礎能力コツを最優先で回収。時空Lv5で継承選手が加入！",
-    pair: "ブラック ＋ ゼンザイ",
-    choice: "【気になる！】緩急◯ / 【気にならない】打球反応◯",
+    recruitMember: "美藤 千尋 / 小山 雅（加入）",
+    notes: "基礎能力コツを最優先で回収。時空Lv5達成で継承選手がチームに加入！",
+    targetCombo: "ブラック ＋ ゼンザイ",
+    comboChoice: "【気になる！】緩急◯ / 【気にならない】打球反応◯",
     highlight: true,
   },
   {
@@ -77,9 +83,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "2",
     spaceTimeLv: "7",
-    notes: "【重要】経験点カンスト注意！25Tに向けて★250に調整(主砲キラー)",
-    pair: "あおい ＋ 友沢",
-    choice: "【弁償する】ジャイロボール / 【絶対探し出す】逃げ球",
+    recruitMember: "明智 光秀 / ゼンザイ（加入）",
+    notes: "【重要】経験点カンスト注意！25Tに向けて★250に調整（憧堂景から主砲キラー）。花丸のブラックと織田のゼンザイが揃いコンボ可能に！",
+    targetCombo: "あおい ＋ 友沢",
+    comboChoice: "【弁償する】ジャイロボール / 【絶対探し出す】逃げ球",
     highlight: true,
   },
   {
@@ -90,9 +97,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤18 / 緑4 / 白6",
     cores: "2",
     spaceTimeLv: "9",
-    notes: "所持ポイントと相談。優先度: ときめき/アオハル(球速) ＞ 白薔薇(スタミナ) ＞ フューチャーズ(コン)",
-    pair: "美藤 ＋ 光秀",
-    choice: "【選択肢なし】キレ◯・ゴロピッチャー",
+    recruitMember: "黒珠 真（加入）",
+    notes: "黒珠が加入し【黒珠＋松倉】コンボ発生条件達成！優先度: ときめき/アオハル(球速) ＞ 白薔薇(スタミナ) ＞ フューチャーズ(コン)",
+    targetCombo: "美藤 ＋ 光秀",
+    comboChoice: "【選択肢なし】キレ◯・ゴロピッチャー",
   },
   {
     no: 8,
@@ -102,9 +110,10 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "青8",
     cores: "1",
     spaceTimeLv: "10",
-    notes: "時空Lv10到達！50Tテシータ戦に向けて条件達成",
-    pair: "虹谷 ＋ セティ",
-    choice: "【野球を学ぶ分にはいいだろ？】ノビLv3",
+    recruitMember: "ハルキ（加入）",
+    notes: "ハルキ加入であおいとのコンボ可能に！時空Lv10到達で50Tテシータ戦の条件達成。",
+    targetCombo: "虹谷 ＋ セティ",
+    comboChoice: "【野球を学ぶ分にはいいだろ？】ノビLv3",
     highlight: true,
   },
   {
@@ -115,17 +124,18 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 青2 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "25Tで★250達成していれば憧堂景イベントで金特獲得",
+    recruitMember: "友沢 亮（同行加入）",
+    notes: "友沢加入であおいとのコンボ可能に！25Tで★250達成していれば憧堂景イベントで金特獲得。",
   },
   {
     no: 10,
-    destination: "神楽坂",
+    destination: "神楽坂グループ",
     todo: "クリア最優先",
     estimate: "27-28T (2ターン)",
     nextPoints: "赤12 / 青2 / 白4",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "短ターンで確実に修復",
+    notes: "神楽坂グループを短ターンで確実に修復。",
   },
   {
     no: 11,
@@ -135,7 +145,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "青4 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "神宮寺を回収",
+    recruitMember: "神宮寺 光（同行加入）",
+    notes: "神宮寺を回収。",
   },
   {
     no: 12,
@@ -145,7 +156,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤12 / 青6 / 白10",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "32Tでダイジョーブ博士イベントの可能性あり",
+    recruitMember: "大豪月（加入）",
+    notes: "32Tでダイジョーブ博士イベントの可能性あり。",
   },
   {
     no: 13,
@@ -155,7 +167,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "青18 / 白10",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "必要ポイントをしっかり確認",
+    recruitMember: "美一式 高伊（加入）",
+    notes: "美一式加入で神宮寺とのコンボ【神宮寺＋美一式】可能に！",
   },
   {
     no: 14,
@@ -165,7 +178,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "赤白: 7 / 青緑: 8",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "各色ポイントをバランスよく消費",
+    recruitMember: "虹谷 誠（加入）",
+    notes: "虹谷誠加入。",
   },
   {
     no: 15,
@@ -175,7 +189,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "緑14 / 白4",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "終盤の修復加速",
+    recruitMember: "セティーヌ（加入）",
+    notes: "セティーヌ加入で【虹谷＋セティ】コンボ可能に！",
   },
   {
     no: 16,
@@ -185,7 +200,8 @@ export const pitcherFlow: FlowStep[] = [
     nextPoints: "所持コアと相談",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "最終戦に向けた経験点集積",
+    recruitMember: "十六夜 瑠菜（加入）",
+    notes: "最終戦に向けた経験点集積。",
   },
   {
     no: 17,
@@ -209,9 +225,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 白2",
     cores: "0",
     spaceTimeLv: "1",
-    notes: "四条を彼女にしつつ捕手の重要相棒「進」を即確保",
-    pair: "神宮寺 ＋ 美一式",
-    choice: "【アイドルはナンパな存在】ミートLv3",
+    recruitMember: "猪狩 進（同行加入）",
+    notes: "四条を彼女にしつつ捕手の重要相棒「進」を即同行枠に確保。",
+    targetCombo: "神宮寺 ＋ 美一式",
+    comboChoice: "【アイドルはナンパな存在】ミートLv3",
     highlight: true,
   },
   {
@@ -222,9 +239,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "緑4 / 白2",
     cores: "1",
     spaceTimeLv: "2",
-    notes: "ラブパワー中に四条と練習するとパワドリンクもらえる可能性あり。No2, 3は入替可能",
-    pair: "美藤 ＋ 光秀",
-    choice: "【選択肢なし】パワーLv3 / 存在感",
+    recruitMember: "松倉 宗光（加入）",
+    notes: "ラブパワー中に四条と練習するとパワドリンクもらえる可能性あり。No2, 3は入替可能。",
+    targetCombo: "美藤 ＋ 光秀",
+    comboChoice: "【選択肢なし】パワーLv3 / 存在感",
     highlight: true,
   },
   {
@@ -235,9 +253,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "青6 / 白2",
     cores: "1",
     spaceTimeLv: "3",
-    notes: "※聖ジャスミンでパワーは下振れしやすいので注意",
-    pair: "進 ＋ 聖",
-    choice: "【ふたり同時に練習！】フレーミング◯ / 広角打法",
+    recruitMember: "早川 あおい（同行加入） / 六道 聖（加入）",
+    notes: "あおいを同行枠に追加。進と聖が揃い【進＋聖】でフレーミング◯獲得可能に！",
+    targetCombo: "進 ＋ 聖",
+    comboChoice: "【ふたり同時に練習！】フレーミング◯ / 広角打法",
     highlight: true,
   },
   {
@@ -248,9 +267,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "1",
     spaceTimeLv: "4",
-    notes: "時空エネルギーを効率よく確保",
-    pair: "黒珠 ＋ 松倉",
-    choice: "【松倉の話し相手になる】悪球打ち / ハイボールヒッター",
+    recruitMember: "ブラック（加入）",
+    notes: "時空エネルギーを効率よく確保。",
+    targetCombo: "黒珠 ＋ 松倉",
+    comboChoice: "【松倉の話し相手になる】悪球打ち / ハイボールヒッター",
   },
   {
     no: 5,
@@ -260,9 +280,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "全種5",
     cores: "1",
     spaceTimeLv: "5",
-    notes: "基礎能力コツを2回確実に取得。時空Lv5で継承選手加入",
-    pair: "あおい ＋ 友沢",
-    choice: "【弁償する】プルヒッター / チャンス",
+    recruitMember: "美藤 千尋 / 小山 雅（加入）",
+    notes: "基礎能力コツを2回確実に取得。時空Lv5で継承選手加入！",
+    targetCombo: "あおい ＋ 友沢",
+    comboChoice: "【弁償する】プルヒッター / チャンス",
     highlight: true,
   },
   {
@@ -273,9 +294,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤12 / 青2 / 白4",
     cores: "2",
     spaceTimeLv: "7",
-    notes: "【重要】経験点オーバーフロー注意！25Tに向けて★250に調整(主砲キラー)",
-    pair: "虹谷 ＋ セティ",
-    choice: "【野球を学ぶ分にはいいだろ？】ムード◯ / レーザービーム",
+    recruitMember: "明智 光秀 / ゼンザイ（加入）",
+    notes: "【重要】経験点オーバーフロー注意！25Tに向けて★250に調整(主砲キラー)。聖ジャスミンの美藤と織田の光秀が揃い【美藤＋光秀】可能！",
+    targetCombo: "虹谷 ＋ セティ",
+    comboChoice: "【野球を学ぶ分にはいいだろ？】ムード◯ / レーザービーム",
     highlight: true,
   },
   {
@@ -286,9 +308,10 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "緑14 / 白4",
     cores: "2",
     spaceTimeLv: "9",
-    notes: "優先度: ときめき青春/アオハル(ミートコツ)",
-    pair: "あおい ＋ ハルキ",
-    choice: "【事情を話す】送球Lv3 / かく乱",
+    recruitMember: "神宮寺 光（同行加入）",
+    notes: "神宮寺を回収。優先度: ときめき青春/アオハル(ミートコツ)",
+    targetCombo: "あおい ＋ ハルキ",
+    comboChoice: "【事情を話す】送球Lv3 / かく乱",
     highlight: true,
   },
   {
@@ -299,7 +322,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "青8",
     cores: "0",
     spaceTimeLv: "9",
-    notes: "消費コア0で効率修復",
+    recruitMember: "十六夜 瑠菜（加入）",
+    notes: "消費コア0で効率修復。",
   },
   {
     no: 9,
@@ -309,7 +333,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "青18 / 白10",
     cores: "1",
     spaceTimeLv: "10",
-    notes: "東条を回収。時空Lv10到達！★250分岐を突破",
+    recruitMember: "東條 小次郎（同行加入） / 友沢 亮（加入）",
+    notes: "東條を回収。時空Lv10到達！★250分岐を突破。十六夜と東條でコンボ可能に！",
     highlight: true,
   },
   {
@@ -320,7 +345,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "手堅くクリア",
+    recruitMember: "美一式 高伊（加入）",
+    notes: "手堅くクリア。神宮寺と美一式が揃い【神宮寺＋美一式】ミートLv3が可能に！",
   },
   {
     no: 11,
@@ -330,7 +356,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "青4 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "白薔薇クリアでデートイベント経験点が増加！",
+    recruitMember: "黒珠 真（加入）",
+    notes: "白薔薇クリアでデートイベント経験点が増加！松倉と黒珠が揃いコンボ可能。",
     highlight: true,
   },
   {
@@ -341,7 +368,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "青18 / 白10",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "32Tダイジョーブ博士の手術イベント考慮",
+    recruitMember: "大豪月（加入）",
+    notes: "32Tダイジョーブ博士の手術イベント考慮。",
   },
   {
     no: 13,
@@ -351,7 +379,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤白: 7 / 青緑: 8",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "ポイント消費を調整",
+    recruitMember: "虹谷 誠（加入）",
+    notes: "ポイント消費を調整。",
   },
   {
     no: 14,
@@ -361,7 +390,8 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤18 / 緑4 / 白6",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "大量の経験点獲得",
+    recruitMember: "セティーヌ（加入）",
+    notes: "大量の経験点獲得。虹谷誠とセティーヌが揃いコンボ可能に！",
   },
   {
     no: 15,
@@ -371,17 +401,18 @@ export const catcherFlow: FlowStep[] = [
     nextPoints: "赤4 / 青2 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "終盤の安定稼ぎ",
+    recruitMember: "ハルキ（加入）",
+    notes: "あおいとハルキが揃い【あおい＋ハルキ】送球Lv3が可能に！",
   },
   {
     no: 16,
-    destination: "神楽坂",
+    destination: "神楽坂グループ",
     todo: "クリア最優先",
     estimate: "42-44T",
     nextPoints: "赤18 / 緑4 / 白6",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "ターン不足の場合は最悪カットしてもOK",
+    notes: "ターン不足の場合は最悪カットしてもOK。",
   },
   {
     no: 17,
@@ -405,9 +436,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤4 / 白2",
     cores: "0",
     spaceTimeLv: "1",
-    notes: "四条を彼女にし、守を同行させて基礎固め",
-    pair: "神宮寺 ＋ 美一式",
-    choice: "【アイドルはナンパな存在】ミートLv3",
+    recruitMember: "猪狩 守（同行加入）",
+    notes: "四条を彼女にし、守を同行加入させて基礎固め。\n※右側のコンボは対象キャラが揃った後にランダム発生します。",
+    targetCombo: "神宮寺 ＋ 美一式",
+    comboChoice: "【アイドルはナンパな存在】ミートLv3",
     highlight: true,
   },
   {
@@ -418,9 +450,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "緑4 / 白2",
     cores: "1",
     spaceTimeLv: "2",
-    notes: "ラブパワー中に四条と練習でパワドリ回収。No2, 3は入替可能",
-    pair: "猪狩守 ＋ みずき",
-    choice: "【猪狩と話す】守備力Lv3",
+    recruitMember: "松倉 宗光（加入）",
+    notes: "ラブパワー中に四条と練習でパワドリ回収。No2, 3は入替可能。",
+    targetCombo: "猪狩守 ＋ みずき",
+    comboChoice: "【猪狩と話す】守備力Lv3",
     highlight: true,
   },
   {
@@ -431,9 +464,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "青6 / 白2",
     cores: "1",
     spaceTimeLv: "3",
-    notes: "みずきを同行枠に追加。※聖ジャスミンでパワーは下振れ注意",
-    pair: "美藤 ＋ 光秀",
-    choice: "【選択肢なし】パワーLv3 / 存在感",
+    recruitMember: "橘 みずき（同行加入） / 早川 あおい / 六道 聖（加入）",
+    notes: "みずきを同行枠に追加。あかつきで連れてきた守とみずきが揃い【守＋みずき】守備力Lv3が可能に！",
+    targetCombo: "美藤 ＋ 光秀",
+    comboChoice: "【選択肢なし】パワーLv3 / 存在感",
     highlight: true,
   },
   {
@@ -444,9 +478,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "1",
     spaceTimeLv: "4",
-    notes: "時空エネルギーを効率よく確保",
-    pair: "黒珠 ＋ 松倉",
-    choice: "【松倉の話し相手になる】悪球打ち / ハイボールヒッター",
+    recruitMember: "ブラック（加入）",
+    notes: "時空エネルギーを効率よく確保。",
+    targetCombo: "黒珠 ＋ 松倉",
+    comboChoice: "【松倉の話し相手になる】悪球打ち / ハイボールヒッター",
   },
   {
     no: 5,
@@ -456,9 +491,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "全種5",
     cores: "1",
     spaceTimeLv: "5",
+    recruitMember: "美藤 千尋 / 小山 雅（加入）",
     notes: "基礎能力コツ2回回収。時空Lv5で継承選手加入！",
-    pair: "東条 ＋ 十六夜",
-    choice: "【オレも仲間に入れろ】対エース◯ / サブポジ三塁Lv3",
+    targetCombo: "東条 ＋ 十六夜",
+    comboChoice: "【オレも仲間に入れろ】対エース◯ / サブポジ三塁Lv3",
     highlight: true,
   },
   {
@@ -469,9 +505,10 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤12 / 青2 / 白4",
     cores: "2",
     spaceTimeLv: "7",
-    notes: "【重要】経験点オーバーフロー注意！25Tに向けて★250に調整(主砲キラー)",
-    pair: "虹谷 ＋ セティ",
-    choice: "【野球を学ぶ分にはいいだろ？】ムード◯ / レーザービーム",
+    recruitMember: "明智 光秀 / ゼンザイ（加入）",
+    notes: "【重要】経験点オーバーフロー注意！25Tに向けて★250に調整(主砲キラー)。聖ジャスミンの美藤と織田の光秀が揃い【美藤＋光秀】パワーLv3が可能に！",
+    targetCombo: "虹谷 ＋ セティ",
+    comboChoice: "【野球を学ぶ分にはいいだろ？】ムード◯ / レーザービーム",
     highlight: true,
   },
   {
@@ -482,7 +519,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "緑14 / 白4",
     cores: "2",
     spaceTimeLv: "9",
-    notes: "優先度: ときめき青春/アオハル(ミートコツ)",
+    recruitMember: "神宮寺 光（同行加入）",
+    notes: "優先度: ときめき青春/アオハル(ミートコツ)。神宮寺を回収。",
   },
   {
     no: 8,
@@ -492,7 +530,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "青8",
     cores: "0",
     spaceTimeLv: "9",
-    notes: "コア消費0で手早く修復",
+    recruitMember: "十六夜 瑠菜（加入）",
+    notes: "コア消費0で手早く修復。",
   },
   {
     no: 9,
@@ -502,7 +541,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "青18 / 白10",
     cores: "1",
     spaceTimeLv: "10",
-    notes: "東条回収。時空Lv10到達！★250分岐を突破",
+    recruitMember: "東條 小次郎（同行加入） / 友沢 亮（加入）",
+    notes: "東條回収。時空Lv10到達！★250分岐を突破。十六夜と東條が揃い【東條＋十六夜】コンボ可能！",
     highlight: true,
   },
   {
@@ -513,7 +553,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤4 / 緑10 / 白4",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "経験点を稼ぎつつクリア",
+    recruitMember: "美一式 高伊（加入）",
+    notes: "美一式加入！ときめきの神宮寺と揃い【神宮寺＋美一式】ミートLv3コンボが可能に！",
   },
   {
     no: 11,
@@ -523,7 +564,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "青4 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "デートイベント経験点増加恩恵あり",
+    recruitMember: "黒珠 真（加入）",
+    notes: "白薔薇クリアでデートイベント経験点増加！黒珠と松倉が揃いコンボ可能。",
     highlight: true,
   },
   {
@@ -534,7 +576,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "青18 / 白10",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "32Tダイジョーブ博士の手術イベント考慮",
+    recruitMember: "大豪月（加入）",
+    notes: "32Tダイジョーブ博士の手術イベント考慮。",
   },
   {
     no: 13,
@@ -544,7 +587,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤白: 7 / 青緑: 8",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "ポイント消費を調整",
+    recruitMember: "虹谷 誠（加入）",
+    notes: "ポイント消費を調整。",
   },
   {
     no: 14,
@@ -554,7 +598,8 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤18 / 緑4 / 白6",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "大量経験点回収",
+    recruitMember: "セティーヌ（加入）",
+    notes: "虹谷誠とセティーヌが揃い【虹谷＋セティ】コンボ可能！大量経験点回収。",
   },
   {
     no: 15,
@@ -564,17 +609,18 @@ export const fielderFlow: FlowStep[] = [
     nextPoints: "赤4 / 青2 / 白2",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "終盤の安定稼ぎ",
+    recruitMember: "ハルキ（加入）",
+    notes: "終盤の安定稼ぎ。",
   },
   {
     no: 16,
-    destination: "神楽坂",
+    destination: "神楽坂グループ",
     todo: "クリア最優先",
     estimate: "42-44T",
     nextPoints: "赤18 / 緑4 / 白6",
     cores: "2",
     spaceTimeLv: "10",
-    notes: "ターン不足の場合は最悪カットしてもOK",
+    notes: "ターン不足の場合は最悪カットしてもOK。",
   },
   {
     no: 17,
@@ -590,7 +636,7 @@ export const fielderFlow: FlowStep[] = [
 ];
 
 // ==========================================
-// 2. 彼女攻略データ (Game8参照)
+// 2. 彼女攻略データ (全デートイベント網羅)
 // ==========================================
 
 export const heroinesData: HeroineInfo[] = [
@@ -601,8 +647,8 @@ export const heroinesData: HeroineInfo[] = [
     school: "あかつき大附属高校",
     firstSpaceTime: "あかつき大附属高校 (初期開放)",
     howToMeet: "最初から行ける「あかつき大附属」で出現。四条がいる練習を追って好感度を上げると告白イベントが発生して彼女になります。好感度を上げると他時空へも同行します。",
-    howToDate: "彼女にした後、コマンドからデートを選択。デート4回目（イベント04）で金特選択肢が発生します。",
-    lovePowerEffect: "練習時に確率でラブパワー発動（やる気MAX、練習効果大幅UP、体力消費減少）。さらに練習後パワドリンク等の回復アイテムを差し入れしてくれることがあります。",
+    howToDate: "彼女にした後、コマンドからデートを選択。デート1〜5回目でイベントが進行し、デート4回目で金特選択肢が発生します。",
+    lovePowerEffect: "練習時に確率でラブパワー発動（やる気MAX、練習効果大幅UP、体力消費減少）。差し入れでパワドリンクを入手。",
     pitcherGoldSkills: {
       top: {
         choice: "【振り返ったら呪われる】",
@@ -618,8 +664,8 @@ export const heroinesData: HeroineInfo[] = [
     fielderGoldSkills: {
       top: {
         choice: "【振り返ったら呪われる】",
-        skill: "高速レーザー",
-        desc: "矢のような鋭いレーザー送球ができるようになる（Lv2コツ）",
+        skill: "高速レーザー (または外角必打)",
+        desc: "鋭い送球ができるようになる / 外角球の打撃強化（Lv2コツ）",
       },
       bottom: {
         choice: "【声を上げたら呪われる】",
@@ -627,6 +673,153 @@ export const heroinesData: HeroineInfo[] = [
         desc: "左投手との対戦時にものすごく強くなる（Lv2コツ）",
       },
     },
+    dateEvents: [
+      {
+        stepName: "デート 1回目",
+        title: "四条澄香 01",
+        description: "顔合わせデート。好感度の基礎を築きます。",
+        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
+        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
+      },
+      {
+        stepName: "デート 2回目",
+        title: "四条澄香 02",
+        description: "澄香との親睦を深めるデート。",
+        pitcherEffect: {
+          hasChoice: false,
+          directStats: "筋力+8 / 精神+6 / 変化球+16 / 好感度+10",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directStats: "筋力+8 / 精神+6 / 敏捷+16 / 好感度+10",
+        },
+      },
+      {
+        stepName: "デート 3回目",
+        title: "四条澄香 03",
+        description: "犬に関する話題で選択肢が発生！特能コツを獲得できます。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【本物の犬は怖い？】",
+              skills: ["ノビ Lv1"],
+              stats: "筋力+20 / 精神+12 / 変化球+30 / 好感度+25",
+            },
+            {
+              text: "【犬が大好き？】",
+              skills: ["ゴロピッチャー Lv1"],
+              stats: "筋力+20 / 精神+12 / 変化球+30 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【本物の犬は怖い？】",
+              skills: ["(ランダムでカット打ち)"],
+              stats: "筋力+20 / 精神+12 / 敏捷+30 / 好感度+25",
+            },
+            {
+              text: "【犬が大好き？】",
+              skills: ["高速チャージ Lv1"],
+              stats: "筋力+20 / 精神+12 / 敏捷+30 / 好感度+25",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 4回目",
+        title: "四条澄香 04（金特イベント）",
+        description: "【最重要】金特獲得の選択肢分岐！ここで金特Lv2コツを入手します。",
+        isGoldSkill: true,
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【振り返ったら呪われる】",
+              skills: ["✨ 精密機械 Lv2"],
+              stats: "筋力+24 / 精神+20 / 変化球+44 / 好感度+40",
+              note: "低めのコントロールが大幅UP！",
+            },
+            {
+              text: "［下］【声を上げたら呪われる】",
+              skills: ["✨ 鉄腕 Lv2"],
+              stats: "筋力+24 / 精神+20 / 変化球+44 / 好感度+40",
+              note: "調子に影響されにくくなる！",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【振り返ったら呪われる】",
+              skills: ["✨ 高速レーザー Lv2 (外角必打)"],
+              stats: "筋力+24 / 精神+20 / 敏捷+44 / 好感度+40",
+              note: "鋭い送球・外角打ち強化！",
+            },
+            {
+              text: "［下］【声を上げたら呪われる】",
+              skills: ["✨ 左腕キラー Lv2"],
+              stats: "筋力+24 / 精神+20 / 敏捷+44 / 好感度+40",
+              note: "左投手に超強くなる！",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 5回目",
+        title: "四条澄香 05",
+        description: "デート完走！全ステータス大量獲得＆強力特能コツ。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["クロスファイヤー Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["アベレージヒッター Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
+        },
+      },
+      {
+        stepName: "デート 6回目以降",
+        title: "四条澄香 06（追加デート）",
+        description: "食事の選択肢でやる気UP＆能力獲得。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【見た目重視！】",
+              skills: [],
+              stats: "技術+8 / 精神+8 / 変化球+16 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【栄養重視！】",
+              skills: [],
+              stats: "技術+8 / 精神+8 / 変化球+16 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【見た目重視！】",
+              skills: [],
+              stats: "技術+8 / 精神+8 / 敏捷+16 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【栄養重視！】",
+              skills: [],
+              stats: "技術+8 / 精神+8 / 敏捷+16 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+      },
+    ],
     recommendPositions: ["投手（精密機械/鉄腕）", "外野手・強肩野手（高速レーザー）"],
     tips: "初期時空である「あかつき大附属」にいるため、開始直後1〜3ターン目で彼女にでき、最も早くラブパワー恩恵と同行ボーナスを活用できる最重要彼女です。",
     color: "from-blue-600 to-indigo-700",
@@ -635,11 +828,11 @@ export const heroinesData: HeroineInfo[] = [
     id: "hiyori",
     name: "日和 ミヨ",
     reading: "ひより みよ",
-    school: "神楽坂高校",
-    firstSpaceTime: "神楽坂高校",
-    howToMeet: "時空移動で「神楽坂高校」を訪れると出現。日和ミヨがいる練習を行い好感度を上げると告白イベントが発生します。",
-    howToDate: "デート4回目（イベント04）で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れあり。",
+    school: "神楽坂グループ",
+    firstSpaceTime: "神楽坂グループ",
+    howToMeet: "時空移動で「神楽坂グループ」を訪れると出現。日和ミヨがいる練習を行い好感度を上げると告白イベントが発生します。",
+    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
+    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクを入手。",
     pitcherGoldSkills: {
       top: {
         choice: "【友達と行ったことはあるよ】",
@@ -664,8 +857,156 @@ export const heroinesData: HeroineInfo[] = [
         desc: "【捕手専用】捕手出場時、相手打者の能力をささやきで大きく低下させる（Lv2コツ）",
       },
     },
+    dateEvents: [
+      {
+        stepName: "デート 1回目",
+        title: "日和ミヨ 01",
+        description: "顔合わせデート。",
+        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
+        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
+      },
+      {
+        stepName: "デート 2回目",
+        title: "日和ミヨ 02",
+        description: "野手なら固め打ちLv1のコツを獲得！",
+        pitcherEffect: {
+          hasChoice: false,
+          directStats: "技術+8 / 精神+16 / 変化球+8 / 好感度+10",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["固め打ち Lv1"],
+          directStats: "技術+8 / 精神+16 / 敏捷+8 / 好感度+10",
+        },
+      },
+      {
+        stepName: "デート 3回目",
+        title: "日和ミヨ 03",
+        description: "お祭り前の相談。選択肢で特能コツを獲得！",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【もっと頼ろう！】",
+              skills: ["(低確率でリリース◯ Lv1)"],
+              stats: "技術+12 / 精神+32 / 変化球+20 / 好感度+25",
+            },
+            {
+              text: "【オレもしっかりしなきゃ】",
+              skills: ["フライボールピッチャー Lv1"],
+              stats: "技術+12 / 精神+32 / 変化球+20 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【もっと頼ろう！】",
+              skills: ["マルチ弾 Lv1"],
+              stats: "技術+12 / 精神+32 / 敏捷+20 / 好感度+25",
+            },
+            {
+              text: "【オレもしっかりしなきゃ】",
+              skills: ["固め打ち Lv1"],
+              stats: "技術+12 / 精神+32 / 敏捷+20 / 好感度+25",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 4回目",
+        title: "日和ミヨ 04（金特イベント）",
+        description: "【最重要】お祭りデート！金特Lv2コツを獲得。",
+        isGoldSkill: true,
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【友達と行ったことはあるよ】",
+              skills: ["✨ 主砲キラー Lv2"],
+              stats: "技術+24 / 精神+48 / 変化球+24 / 好感度+40",
+              note: "強打者との対戦時に大幅能力UP！",
+            },
+            {
+              text: "［下］【お祭りはちょっと苦手だった】",
+              skills: ["✨ ドクターK Lv2"],
+              stats: "技術+24 / 精神+48 / 変化球+24 / 好感度+40",
+              note: "2ストライク時の奪三振能力UP！",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【友達と行ったことはあるよ】",
+              skills: ["✨ 高速レーザー Lv2"],
+              stats: "技術+24 / 精神+48 / 敏捷+24 / 好感度+40",
+              note: "矢のような鋭いレーザー送球！",
+            },
+            {
+              text: "［下］【お祭りはちょっと苦手だった】",
+              skills: ["✨ ささやき戦術 Lv2"],
+              stats: "技術+24 / 精神+48 / 敏捷+24 / 好感度+40",
+              note: "【捕手専用】打者の能力を激減！",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 5回目",
+        title: "日和ミヨ 05",
+        description: "デート完走！全ステータス+40＆特能コツ。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["ジャイロボール Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["レーザービーム Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
+        },
+      },
+      {
+        stepName: "デート 6回目以降",
+        title: "日和ミヨ 06（追加デート）",
+        description: "頼り方に関する選択肢でやる気UP。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ミヨさんを頼る】",
+              skills: [],
+              stats: "筋力+8 / 技術+8 / 精神+16 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【自分で考えてみる】",
+              skills: [],
+              stats: "筋力+8 / 技術+8 / 精神+16 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ミヨさんを頼る】",
+              skills: [],
+              stats: "筋力+8 / 技術+8 / 精神+16 / やる気+1 / 好感度+28",
+            },
+            {
+              text: "【自分で考えてみる】",
+              skills: [],
+              stats: "筋力+8 / 技術+8 / 精神+16 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+      },
+    ],
     recommendPositions: ["捕手（ささやき戦術特化）", "投手（ドクターK/主砲キラー）"],
-    tips: "捕手育成時に強力な金特「ささやき戦術」を入手できるのが最大の魅力。捕手を育成する場合は神楽坂高校を訪れて狙う価値大です。",
+    tips: "所属は「神楽坂グループ」（社会人チーム）。捕手育成時に最強格の捕手専用金特「ささやき戦術」を入手できるのが最大の強みです。",
     color: "from-emerald-600 to-teal-700",
   },
   {
@@ -675,8 +1016,8 @@ export const heroinesData: HeroineInfo[] = [
     school: "天空中央高校",
     firstSpaceTime: "天空中央高校",
     howToMeet: "時空移動で「天空中央高校」を訪れると出現。練習を追って好感度を上げると告白イベントが発生します。",
-    howToDate: "デート4回目（イベント04）で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れあり。",
+    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
+    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクDXを入手！",
     pitcherGoldSkills: {
       top: {
         choice: "【「あーん」し返す】",
@@ -701,8 +1042,156 @@ export const heroinesData: HeroineInfo[] = [
         desc: "相手チームのエース投手と対戦する時に能力がすごく上がる（Lv2コツ）",
       },
     },
+    dateEvents: [
+      {
+        stepName: "デート 1回目",
+        title: "虹谷彩理 01",
+        description: "顔合わせデート。",
+        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
+        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
+      },
+      {
+        stepName: "デート 2回目",
+        title: "虹谷彩理 02",
+        description: "投手なら牽制◯Lv1のコツを獲得！",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["牽制◯ Lv1"],
+          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
+        },
+      },
+      {
+        stepName: "デート 3回目",
+        title: "虹谷彩理 03",
+        description: "買い物の選択肢。野手ならケガしにくさLv1を獲得！",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ついてきてもらう】",
+              skills: [],
+              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
+            },
+            {
+              text: "【ひとりでサッと買いに行く】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ついてきてもらう】",
+              skills: ["ケガしにくさ Lv1"],
+              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
+            },
+            {
+              text: "【ひとりでサッと買いに行く】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 4回目",
+        title: "虹谷彩理 04（金特イベント）",
+        description: "【最重要】食事デート！金特Lv2コツを獲得。",
+        isGoldSkill: true,
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【「あーん」し返す】",
+              skills: ["✨ 強心臓 Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
+              note: "得点圏ピンチ時に能力大幅UP！",
+            },
+            {
+              text: "［下］【ノリノリで口を開ける】",
+              skills: ["✨ クロスキャノン Lv2"],
+              stats: "技術+24 / 精神+24 / 変化球+48 / 好感度+40",
+              note: "対角線コース投球で能力超UP！",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【「あーん」し返す】",
+              skills: ["✨ 気迫ヘッド Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
+              note: "際どいプレーでヘッスラ！",
+            },
+            {
+              text: "［下］【ノリノリで口を開ける】",
+              skills: ["✨ エースキラー Lv2"],
+              stats: "技術+48 / 精神+24 / 敏捷+24 / 好感度+40",
+              note: "相手エース投手を打ち崩す！",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 5回目",
+        title: "虹谷彩理 05",
+        description: "デート完走！全ステータス+40＆強力特能コツ。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["奪三振 Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["プルヒッター Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
+        },
+      },
+      {
+        stepName: "デート 6回目以降",
+        title: "虹谷彩理 06（追加デート）",
+        description: "気遣いの選択肢でやる気UP。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【大丈夫だと言って断る】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【お願いする】",
+              skills: [],
+              stats: "技術+16 / 精神+8 / 変化球+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【大丈夫だと言って断る】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【お願いする】",
+              skills: [],
+              stats: "技術+16 / 精神+8 / 敏捷+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+      },
+    ],
     recommendPositions: ["投手（強心臓/クロスキャノン）", "野手全般（気迫ヘッド/エースキラー）"],
-    tips: "投手・野手ともに実戦で発動頻度が高く強力な金特が揃っています。天空中央高校を攻略ルートに組み込む育成理論で大活躍します。",
+    tips: "差し入れがパワドリンクDX（全快）なのが強力。投手・野手ともに実戦向きの金特が揃っています。",
     color: "from-pink-600 to-rose-700",
   },
   {
@@ -712,8 +1201,8 @@ export const heroinesData: HeroineInfo[] = [
     school: "アオハル学園",
     firstSpaceTime: "アオハル学園",
     howToMeet: "時空移動で「アオハル学園」を訪れると出現。練習を重ねて好感度を上げると告白イベントが発生します。",
-    howToDate: "デート4回目（イベント04）で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れあり。",
+    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
+    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクを入手。",
     pitcherGoldSkills: {
       top: {
         choice: "【古代！】",
@@ -738,8 +1227,155 @@ export const heroinesData: HeroineInfo[] = [
         desc: "出塁すると相手投手にプレッシャーを与えて動揺させる（Lv2コツ）",
       },
     },
+    dateEvents: [
+      {
+        stepName: "デート 1回目",
+        title: "本若春陽 01",
+        description: "顔合わせデート。",
+        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
+        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
+      },
+      {
+        stepName: "デート 2回目",
+        title: "本若春陽 02",
+        description: "親睦を深めるデート。",
+        pitcherEffect: {
+          hasChoice: false,
+          directStats: "筋力+16 / 技術+8 / 精神+8 / 好感度+10",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directStats: "筋力+16 / 技術+8 / 精神+8 / 好感度+10",
+        },
+      },
+      {
+        stepName: "デート 3回目",
+        title: "本若春陽 03",
+        description: "お出かけ先の選択肢で特能コツを獲得！",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【いざ食べ歩き！】",
+              skills: ["内角攻め Lv1"],
+              stats: "筋力+32 / 技術+20 / 精神+12 / 好感度+25",
+            },
+            {
+              text: "【静かな場所に行く】",
+              skills: ["逃げ球 Lv1"],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【いざ食べ歩き！】",
+              skills: ["回復 Lv1"],
+              stats: "筋力+32 / 技術+20 / 精神+12 / 好感度+25",
+            },
+            {
+              text: "【静かな場所に行く】",
+              skills: ["チャンスメーカー Lv1"],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+28",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 4回目",
+        title: "本若春陽 04（金特イベント）",
+        description: "【最重要】古代か宇宙かの選択！最高峰の金特Lv2コツを獲得。",
+        isGoldSkill: true,
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【古代！】",
+              skills: ["✨ 怪物球威 Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+43",
+              note: "打球が飛ばなくなる重い球の最高峰！",
+            },
+            {
+              text: "［下］【宇宙！】",
+              skills: ["✨ 勝利の星 Lv2"],
+              stats: "筋力+24 / 技術+48 / 精神+24 / 好感度+40",
+              note: "登板でチームに勝ち運を呼ぶ！",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【古代！】",
+              skills: ["✨ 精神的支柱 Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
+              note: "出場でチーム全員の能力がUP！",
+            },
+            {
+              text: "［下］【宇宙！】",
+              skills: ["✨ トリックスター Lv2"],
+              stats: "筋力+24 / 技術+48 / 精神+24 / 好感度+40",
+              note: "出塁時に相手投手を激しく動揺！",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 5回目",
+        title: "本若春陽 05",
+        description: "デート完走！全ステータス+40＆強力特能コツ。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["対強打者◯ Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["広角打法 Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
+        },
+      },
+      {
+        stepName: "デート 6回目以降",
+        title: "本若春陽 06（追加デート）",
+        description: "選択肢でやる気UP。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ずっしり！】",
+              skills: [],
+              stats: "筋力+16 / 精神+8 / 変化球+8 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【やわらか！】",
+              skills: [],
+              stats: "筋力+12 / 精神+12 / 変化球+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ずっしり！】",
+              skills: [],
+              stats: "筋力+16 / 精神+8 / 敏捷+8 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【やわらか！】",
+              skills: [],
+              stats: "筋力+12 / 精神+12 / 敏捷+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+      },
+    ],
     recommendPositions: ["投手（怪物球威/勝利の星）", "野手全般（精神的支柱/トリックスター）"],
-    tips: "野手最高峰のチームバフ金特「精神的支柱」や、投手の最強格「怪物球威」を獲得可能。アオハル学園経由の育成で重宝されます。",
+    tips: "野手最高峰のチームバフ金特「精神的支柱」や投手の「怪物球威」を獲得可能。アオハル学園経由の育成で大活躍します。",
     color: "from-amber-600 to-orange-700",
   },
 ];
@@ -1085,7 +1721,7 @@ export const comboEventsData: ComboEvent[] = [
 ];
 
 // ==========================================
-// 4. 攻略Tipsデータ (Game8育成理論・要点)
+// 4. 攻略Tipsデータ
 // ==========================================
 
 export const strategyTips: StrategyTip[] = [

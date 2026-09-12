@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PositionType, FlowStep } from "../types";
 import { pitcherFlow, catcherFlow, fielderFlow } from "../data/gameData";
-import { CheckCircle2, Circle, AlertTriangle, Sparkles, Filter } from "lucide-react";
+import { CheckCircle2, Circle, AlertTriangle, Sparkles, Filter, UserPlus } from "lucide-react";
 
 export const FlowchartSection: React.FC = () => {
   const [position, setPosition] = useState<PositionType>("pitcher");
@@ -150,21 +150,31 @@ export const FlowchartSection: React.FC = () => {
                       時空Lv: {step.spaceTimeLv}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 font-semibold border border-amber-800/40">
-                      コア: {step.cores}
+                      使用コア: {step.cores}
                     </span>
                   </div>
 
-                  {/* TODO内容 */}
-                  <div className="bg-slate-950/60 rounded-xl p-3 border border-slate-800/80 mb-3">
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
-                      TODO / 目的
+                  {/* TODO & 同行メンバー */}
+                  <div className="bg-slate-950/60 rounded-xl p-3 border border-slate-800/80 mb-3 space-y-2">
+                    <div>
+                      <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+                        TODO / 行動目標
+                      </div>
+                      <div className="text-sm font-semibold text-slate-100 whitespace-pre-line leading-relaxed">
+                        {step.todo}
+                      </div>
                     </div>
-                    <div className="text-sm font-semibold text-slate-100 whitespace-pre-line leading-relaxed">
-                      {step.todo}
-                    </div>
+
+                    {step.recruitMember && (
+                      <div className="pt-2 border-t border-slate-800/60 flex items-center gap-1.5 text-xs">
+                        <UserPlus className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span className="text-slate-400 font-medium">同行・加入:</span>
+                        <span className="font-bold text-emerald-300">{step.recruitMember}</span>
+                      </div>
+                    )}
                   </div>
 
-                  {/* 必要ポイント & 備考 & ペア情報 */}
+                  {/* 必要ポイント & 狙うコンボ情報 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs">
                     {/* 必要ポイント */}
                     <div className="bg-slate-800/60 rounded-lg p-2.5 border border-slate-700/40 flex items-center justify-between">
@@ -172,20 +182,22 @@ export const FlowchartSection: React.FC = () => {
                       <span className="font-bold text-sky-300">{step.nextPoints || "なし"}</span>
                     </div>
 
-                    {/* ペア・選択肢 */}
-                    {step.pair ? (
+                    {/* 狙うコンボメモ */}
+                    {step.targetCombo ? (
                       <div className="bg-slate-800/60 rounded-lg p-2.5 border border-slate-700/40">
-                        <div className="flex items-center gap-1.5 text-amber-400 font-bold mb-1">
-                          <Sparkles className="w-3.5 h-3.5" />
-                          <span>同行ペア: {step.pair}</span>
+                        <div className="flex items-center justify-between gap-1 text-amber-400 font-bold mb-1">
+                          <span className="flex items-center gap-1">
+                            <Sparkles className="w-3.5 h-3.5" />
+                            <span>推奨コンボ目標: {step.targetCombo}</span>
+                          </span>
                         </div>
                         <div className="text-slate-200 font-medium whitespace-pre-line">
-                          {step.choice}
+                          {step.comboChoice}
                         </div>
                       </div>
                     ) : (
                       <div className="bg-slate-800/40 rounded-lg p-2.5 border border-slate-700/30 text-slate-500 italic">
-                        同行ペア特定なし
+                        コンボ指定なし（クリア・経験点優先）
                       </div>
                     )}
                   </div>

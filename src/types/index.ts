@@ -8,17 +8,37 @@ export interface FlowStep {
   nextPoints: string;
   cores: string;
   spaceTimeLv: string;
+  recruitMember?: string; // 同行加入メンバー
   notes?: string;
-  pair?: string;
-  choice?: string;
+  targetCombo?: string;   // 狙うコンボ
+  comboChoice?: string;  // コンボ推奨選択肢
   highlight?: boolean;
 }
 
-export interface HeroineChoice {
-  choiceText: string;
-  goldSkill: string;
+export interface DateEventChoice {
+  text: string;
+  skills: string[];
+  stats: string;
+  note?: string;
+}
+
+export interface DateEvent {
+  stepName: string;
+  title: string;
   description: string;
-  skillType: "pitcher" | "fielder";
+  isGoldSkill?: boolean;
+  pitcherEffect: {
+    hasChoice: boolean;
+    choices?: DateEventChoice[];
+    directStats?: string;
+    directSkills?: string[];
+  };
+  fielderEffect: {
+    hasChoice: boolean;
+    choices?: DateEventChoice[];
+    directStats?: string;
+    directSkills?: string[];
+  };
 }
 
 export interface HeroineInfo {
@@ -38,6 +58,7 @@ export interface HeroineInfo {
     top: { choice: string; skill: string; desc: string };
     bottom: { choice: string; skill: string; desc: string };
   };
+  dateEvents: DateEvent[];
   recommendPositions: string[];
   tips: string;
   color: string;
