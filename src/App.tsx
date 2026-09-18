@@ -4,9 +4,10 @@ import { FlowchartSection } from "./components/FlowchartSection";
 import { HeroineSection } from "./components/HeroineSection";
 import { ComboSection } from "./components/ComboSection";
 import { TipsSection } from "./components/TipsSection";
+import { FormsSection } from "./components/FormsSection";
 
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"flow" | "heroine" | "combo" | "tips">("flow");
+  const [activeTab, setActiveTab] = useState<"flow" | "heroine" | "combo" | "tips" | "forms">("flow");
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
         {activeTab === "heroine" && <HeroineSection />}
         {activeTab === "combo" && <ComboSection />}
         {activeTab === "tips" && <TipsSection />}
+        {activeTab === "forms" && <FormsSection />}
       </main>
 
       {/* フッター */}

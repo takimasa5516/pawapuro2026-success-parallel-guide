@@ -1,9 +1,9 @@
 import React from "react";
-import { Compass, Heart, Users, Lightbulb } from "lucide-react";
+import { Compass, Heart, Users, Lightbulb, Activity } from "lucide-react";
 
 interface HeaderProps {
-  activeTab: "flow" | "heroine" | "combo" | "tips";
-  setActiveTab: (tab: "flow" | "heroine" | "combo" | "tips") => void;
+  activeTab: "flow" | "heroine" | "combo" | "tips" | "forms";
+  setActiveTab: (tab: "flow" | "heroine" | "combo" | "tips" | "forms") => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
@@ -12,6 +12,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     { id: "heroine", label: "彼女情報", icon: Heart, badge: "4名・金特選択肢" },
     { id: "combo", label: "コンボイベント", icon: Users, badge: "全11組" },
     { id: "tips", label: "攻略のコツ", icon: Lightbulb, badge: "★250分岐他" },
+    { id: "forms", label: "フォーム一覧", icon: Activity, badge: "打撃363/投球521" },
   ] as const;
 
   return (
