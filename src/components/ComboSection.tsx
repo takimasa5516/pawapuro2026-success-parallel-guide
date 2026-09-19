@@ -100,6 +100,77 @@ export const ComboSection: React.FC = () => {
         </div>
       </div>
 
+      {/* Game8推奨: 基礎能力Lv3コツ早見パネル */}
+      <div className="bg-gradient-to-br from-amber-950/30 via-slate-900 to-slate-900 border border-amber-500/30 rounded-2xl p-4 sm:p-5 shadow-lg">
+        <div className="flex items-center gap-2 mb-3">
+          <Award className="w-5 h-5 text-amber-400" />
+          <h3 className="text-sm sm:text-base font-black text-amber-300">
+            【最重要】基礎能力Lv3コツ獲得コンボ早見表（Game8推奨・経験点大幅節約）
+          </h3>
+        </div>
+        <p className="text-xs text-slate-300 mb-3.5 leading-relaxed">
+          基礎能力のLv3コツはサクセス育成において最大の経験点節約になります。育成ポジションに合わせて対象キャラを優先して仲間にしましょう。
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          {position === "pitcher" ? (
+            <>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">⚡ 球速 Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">神宮寺 光 × 美一式 高伊</div>
+                <div className="text-[11px] text-blue-400">選:【アイドルになればモテモテだ！】</div>
+              </div>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">🎯 コントロール Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">ハルキ × 早川 あおい</div>
+                <div className="text-[11px] text-blue-400">選:【話題をすり替える】</div>
+              </div>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">💪 スタミナ Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">黒珠 真 × 松倉 宗光</div>
+                <div className="text-[11px] text-blue-400">選:【黒珠の練習相手になる】</div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">🎯 ミート Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">神宮寺 光 × 美一式 高伊</div>
+                <div className="text-[11px] text-blue-400">選:【アイドルはナンパな存在】</div>
+              </div>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">💥 パワー Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">美藤 千尋 × 明智 光秀</div>
+                <div className="text-[11px] text-emerald-400">選: 選択肢なし (確定入手)</div>
+              </div>
+              <div className="bg-slate-950/70 border border-amber-500/20 rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-bold text-amber-400">🛡️ 守備力 Lv3</span>
+                  <span className="text-[10px] text-slate-500 font-mono">+48pt全種</span>
+                </div>
+                <div className="text-xs font-bold text-white mb-1">猪狩 守 × 橘 みずき</div>
+                <div className="text-[11px] text-blue-400">選:【猪狩と話す】</div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
       {/* コンボ一覧 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredCombos.map((combo) => {

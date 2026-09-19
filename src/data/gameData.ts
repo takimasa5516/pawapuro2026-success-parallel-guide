@@ -636,7 +636,7 @@ export const fielderFlow: FlowStep[] = [
 ];
 
 // ==========================================
-// 2. 彼女攻略データ (全デートイベント網羅)
+// 2. 彼女攻略データ (Game8最新攻略情報 完全準拠)
 // ==========================================
 
 export const heroinesData: HeroineInfo[] = [
@@ -647,28 +647,28 @@ export const heroinesData: HeroineInfo[] = [
     school: "あかつき大附属高校",
     firstSpaceTime: "あかつき大附属高校 (初期開放)",
     howToMeet: "最初から行ける「あかつき大附属」で出現。四条がいる練習を追って好感度を上げると告白イベントが発生して彼女になります。好感度を上げると他時空へも同行します。",
-    howToDate: "彼女にした後、コマンドからデートを選択。デート1〜5回目でイベントが進行し、デート4回目で金特選択肢が発生します。",
-    lovePowerEffect: "練習時に確率でラブパワー発動（やる気MAX、練習効果大幅UP、体力消費減少）。差し入れでパワドリンクを入手。",
+    howToDate: "彼女にした後、コマンドからデートを選択。デート1〜5回目でイベントが進行し、デート4回目で金特選択肢が発生します（成功時好感度+4）。",
+    lovePowerEffect: "練習時に確率でラブパワー発動（やる気MAX、練習効果大幅UP、体力消費減少）。差し入れでパワドリンク×1を入手。",
     pitcherGoldSkills: {
       top: {
-        choice: "【振り返ったら呪われる】",
+        choice: "［上］【振り返ったら呪われる】",
         skill: "精密機械",
         desc: "低めのコースのコントロールがものすごく良くなる（Lv2コツ）",
       },
       bottom: {
-        choice: "【声を上げたら呪われる】",
+        choice: "［下］【声を上げたら呪われる】",
         skill: "鉄腕",
         desc: "ピッチングが調子にすごく影響されにくくなる（Lv2コツ）",
       },
     },
     fielderGoldSkills: {
       top: {
-        choice: "【振り返ったら呪われる】",
-        skill: "高速レーザー (または外角必打)",
-        desc: "鋭い送球ができるようになる / 外角球の打撃強化（Lv2コツ）",
+        choice: "［上］【振り返ったら呪われる】",
+        skill: "外角必打（高速レーザー）",
+        desc: "外角球の打撃強化（Lv2コツ）。※一部外部まとめで高速レーザー表記の場合あり",
       },
       bottom: {
-        choice: "【声を上げたら呪われる】",
+        choice: "［下］【声を上げたら呪われる】",
         skill: "左腕キラー",
         desc: "左投手との対戦時にものすごく強くなる（Lv2コツ）",
       },
@@ -718,7 +718,7 @@ export const heroinesData: HeroineInfo[] = [
           choices: [
             {
               text: "【本物の犬は怖い？】",
-              skills: ["(ランダムでカット打ち)"],
+              skills: ["(ランダム/低確率でカット打ち Lv1)"],
               stats: "筋力+20 / 精神+12 / 敏捷+30 / 好感度+25",
             },
             {
@@ -756,15 +756,15 @@ export const heroinesData: HeroineInfo[] = [
           choices: [
             {
               text: "［上］【振り返ったら呪われる】",
-              skills: ["✨ 高速レーザー Lv2 (外角必打)"],
+              skills: ["✨ 外角必打 Lv2 (高速レーザー)"],
               stats: "筋力+24 / 精神+20 / 敏捷+44 / 好感度+40",
-              note: "鋭い送球・外角打ち強化！",
+              note: "外角球の打撃強化！",
             },
             {
               text: "［下］【声を上げたら呪われる】",
               skills: ["✨ 左腕キラー Lv2"],
               stats: "筋力+24 / 精神+20 / 敏捷+44 / 好感度+40",
-              note: "左投手に超強くなる！",
+              note: "対左投手に超強くなる！",
             },
           ],
         },
@@ -820,55 +820,55 @@ export const heroinesData: HeroineInfo[] = [
         },
       },
     ],
-    recommendPositions: ["投手（精密機械/鉄腕）", "外野手・強肩野手（高速レーザー）"],
-    tips: "初期時空である「あかつき大附属」にいるため、開始直後1〜3ターン目で彼女にでき、最も早くラブパワー恩恵と同行ボーナスを活用できる最重要彼女です。",
-    color: "from-blue-600 to-indigo-700",
+    recommendPositions: ["投手 (精密機械/鉄腕)", "外野手/野手 (外角必打/左腕キラー)"],
+    tips: "初期時空（あかつき）ですぐに彼女にできるため、育成序盤の安定感は抜群。デート4回目で【振り返ったら呪われる】を選ぶと投手は『精密機械Lv2』、野手は『外角必打Lv2』を取得。デート完走（5回目）で投手は『クロスファイヤーLv1』、野手は『アベレージヒッターLv1』と全ステータス+40が確定入手できます。また汎用デート（まったり、満腹、哲学、買い物、ワクワク）でも好感度+24と経験点が獲得可能。",
+    color: "from-blue-600/80 to-indigo-700/80",
   },
   {
     id: "hiyori",
     name: "日和 ミヨ",
     reading: "ひより みよ",
-    school: "神楽坂グループ",
-    firstSpaceTime: "神楽坂グループ",
-    howToMeet: "時空移動で「神楽坂グループ」を訪れると出現。日和ミヨがいる練習を行い好感度を上げると告白イベントが発生します。",
-    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクを入手。",
+    school: "太平楽高校",
+    firstSpaceTime: "太平楽高校 (赤・青・緑ルートで到達)",
+    howToMeet: "太平楽高校に移動後、日和ミヨがいる練習コマンドを選択して好感度を上げると告白イベントが発生。",
+    howToDate: "彼女にした後、デートコマンドを実行。デート成功率は高く、成功時好感度+7と上がりやすいのが特徴。",
+    lovePowerEffect: "練習時に確率でラブパワー発動。好感度上昇が早く、早期のラブパワー発動を狙いやすい彼女です。",
     pitcherGoldSkills: {
       top: {
-        choice: "【友達と行ったことはあるよ】",
+        choice: "［上］【友達と行ったことはあるよ】",
         skill: "主砲キラー",
-        desc: "相手チームの強打者と対戦する時に能力がものすごく上がる（Lv2コツ）",
+        desc: "強打者と対戦するときに能力がものすごく上がる（Lv2コツ）",
       },
       bottom: {
-        choice: "【お祭りはちょっと苦手だった】",
+        choice: "［下］【お祭りはちょっと苦手だった】",
         skill: "ドクターK",
-        desc: "2ストライクに追い込んだ時に奪三振能力がものすごく上がる（Lv2コツ）",
+        desc: "2ストライクに追い込んだときに能力がものすごく上がる（Lv2コツ）",
       },
     },
     fielderGoldSkills: {
       top: {
-        choice: "【友達と行ったことはあるよ】",
+        choice: "［上］【友達と行ったことはあるよ】",
         skill: "高速レーザー",
         desc: "矢のような鋭い送球ができるようになる（Lv2コツ）",
       },
       bottom: {
-        choice: "【お祭りはちょっと苦手だった】",
+        choice: "［下］【お祭りはちょっと苦手だった】",
         skill: "ささやき戦術",
-        desc: "【捕手専用】捕手出場時、相手打者の能力をささやきで大きく低下させる（Lv2コツ）",
+        desc: "打者にささやいて惑わす（捕手・野手用金特、Lv2コツ）",
       },
     },
     dateEvents: [
       {
         stepName: "デート 1回目",
         title: "日和ミヨ 01",
-        description: "顔合わせデート。",
+        description: "顔合わせデート。ミヨとの関係がスタート。",
         pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
         fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
       },
       {
         stepName: "デート 2回目",
         title: "日和ミヨ 02",
-        description: "野手なら固め打ちLv1のコツを獲得！",
+        description: "親睦デート。野手はここで固め打ちLv1コツを獲得。",
         pitcherEffect: {
           hasChoice: false,
           directStats: "技術+8 / 精神+16 / 変化球+8 / 好感度+10",
@@ -882,7 +882,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 3回目",
         title: "日和ミヨ 03",
-        description: "お祭り前の相談。選択肢で特能コツを獲得！",
+        description: "頼り方に関する選択肢。野手・投手ともに有用な青特コツを獲得。",
         pitcherEffect: {
           hasChoice: true,
           choices: [
@@ -917,7 +917,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 4回目",
         title: "日和ミヨ 04（金特イベント）",
-        description: "【最重要】お祭りデート！金特Lv2コツを獲得。",
+        description: "お祭りに関する会話で金特分岐！捕手育成に最適な『ささやき戦術』も狙えます。",
         isGoldSkill: true,
         pitcherEffect: {
           hasChoice: true,
@@ -926,13 +926,13 @@ export const heroinesData: HeroineInfo[] = [
               text: "［上］【友達と行ったことはあるよ】",
               skills: ["✨ 主砲キラー Lv2"],
               stats: "技術+24 / 精神+48 / 変化球+24 / 好感度+40",
-              note: "強打者との対戦時に大幅能力UP！",
+              note: "強打者キラー！エース格の投手に最適",
             },
             {
               text: "［下］【お祭りはちょっと苦手だった】",
               skills: ["✨ ドクターK Lv2"],
               stats: "技術+24 / 精神+48 / 変化球+24 / 好感度+40",
-              note: "2ストライク時の奪三振能力UP！",
+              note: "三振奪取能力が大幅上昇！",
             },
           ],
         },
@@ -943,13 +943,13 @@ export const heroinesData: HeroineInfo[] = [
               text: "［上］【友達と行ったことはあるよ】",
               skills: ["✨ 高速レーザー Lv2"],
               stats: "技術+24 / 精神+48 / 敏捷+24 / 好感度+40",
-              note: "矢のような鋭いレーザー送球！",
+              note: "外野手の鉄板金特！",
             },
             {
               text: "［下］【お祭りはちょっと苦手だった】",
               skills: ["✨ ささやき戦術 Lv2"],
               stats: "技術+24 / 精神+48 / 敏捷+24 / 好感度+40",
-              note: "【捕手専用】打者の能力を激減！",
+              note: "【捕手超おすすめ】打者の能力を惑わし下げる最強格の捕手金特！",
             },
           ],
         },
@@ -957,7 +957,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 5回目",
         title: "日和ミヨ 05",
-        description: "デート完走！全ステータス+40＆特能コツ。",
+        description: "デート完走！全ステータス大量獲得＆強力特能コツ。",
         pitcherEffect: {
           hasChoice: false,
           directSkills: ["ジャイロボール Lv1"],
@@ -972,7 +972,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 6回目以降",
         title: "日和ミヨ 06（追加デート）",
-        description: "頼り方に関する選択肢でやる気UP。",
+        description: "相談の選択肢でやる気UP＆能力獲得。",
         pitcherEffect: {
           hasChoice: true,
           choices: [
@@ -1005,240 +1005,55 @@ export const heroinesData: HeroineInfo[] = [
         },
       },
     ],
-    recommendPositions: ["捕手（ささやき戦術特化）", "投手（ドクターK/主砲キラー）"],
-    tips: "所属は「神楽坂グループ」（社会人チーム）。捕手育成時に最強格の捕手専用金特「ささやき戦術」を入手できるのが最大の強みです。",
-    color: "from-emerald-600 to-teal-700",
-  },
-  {
-    id: "nijitani",
-    name: "虹谷 彩理",
-    reading: "にじたに さいり",
-    school: "天空中央高校",
-    firstSpaceTime: "天空中央高校",
-    howToMeet: "時空移動で「天空中央高校」を訪れると出現。練習を追って好感度を上げると告白イベントが発生します。",
-    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクDXを入手！",
-    pitcherGoldSkills: {
-      top: {
-        choice: "【「あーん」し返す】",
-        skill: "強心臓",
-        desc: "得点圏にランナーがいるピンチ時、能力がものすごく上がる（Lv2コツ）",
-      },
-      bottom: {
-        choice: "【ノリノリで口を開ける】",
-        skill: "クロスキャノン",
-        desc: "対角線のコースに投球したときに能力がすごく上がる（Lv2コツ）",
-      },
-    },
-    fielderGoldSkills: {
-      top: {
-        choice: "【「あーん」し返す】",
-        skill: "気迫ヘッド",
-        desc: "際どいタイミングで気迫あふれるヘッドスライディングを行う（Lv2コツ）",
-      },
-      bottom: {
-        choice: "【ノリノリで口を開ける】",
-        skill: "エースキラー",
-        desc: "相手チームのエース投手と対戦する時に能力がすごく上がる（Lv2コツ）",
-      },
-    },
-    dateEvents: [
-      {
-        stepName: "デート 1回目",
-        title: "虹谷彩理 01",
-        description: "顔合わせデート。",
-        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
-        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
-      },
-      {
-        stepName: "デート 2回目",
-        title: "虹谷彩理 02",
-        description: "投手なら牽制◯Lv1のコツを獲得！",
-        pitcherEffect: {
-          hasChoice: false,
-          directSkills: ["牽制◯ Lv1"],
-          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
-        },
-        fielderEffect: {
-          hasChoice: false,
-          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
-        },
-      },
-      {
-        stepName: "デート 3回目",
-        title: "虹谷彩理 03",
-        description: "買い物の選択肢。野手ならケガしにくさLv1を獲得！",
-        pitcherEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "【ついてきてもらう】",
-              skills: [],
-              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
-            },
-            {
-              text: "【ひとりでサッと買いに行く】",
-              skills: [],
-              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
-            },
-          ],
-        },
-        fielderEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "【ついてきてもらう】",
-              skills: ["ケガしにくさ Lv1"],
-              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
-            },
-            {
-              text: "【ひとりでサッと買いに行く】",
-              skills: [],
-              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
-            },
-          ],
-        },
-      },
-      {
-        stepName: "デート 4回目",
-        title: "虹谷彩理 04（金特イベント）",
-        description: "【最重要】食事デート！金特Lv2コツを獲得。",
-        isGoldSkill: true,
-        pitcherEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "［上］【「あーん」し返す】",
-              skills: ["✨ 強心臓 Lv2"],
-              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
-              note: "得点圏ピンチ時に能力大幅UP！",
-            },
-            {
-              text: "［下］【ノリノリで口を開ける】",
-              skills: ["✨ クロスキャノン Lv2"],
-              stats: "技術+24 / 精神+24 / 変化球+48 / 好感度+40",
-              note: "対角線コース投球で能力超UP！",
-            },
-          ],
-        },
-        fielderEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "［上］【「あーん」し返す】",
-              skills: ["✨ 気迫ヘッド Lv2"],
-              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
-              note: "際どいプレーでヘッスラ！",
-            },
-            {
-              text: "［下］【ノリノリで口を開ける】",
-              skills: ["✨ エースキラー Lv2"],
-              stats: "技術+48 / 精神+24 / 敏捷+24 / 好感度+40",
-              note: "相手エース投手を打ち崩す！",
-            },
-          ],
-        },
-      },
-      {
-        stepName: "デート 5回目",
-        title: "虹谷彩理 05",
-        description: "デート完走！全ステータス+40＆強力特能コツ。",
-        pitcherEffect: {
-          hasChoice: false,
-          directSkills: ["奪三振 Lv1"],
-          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
-        },
-        fielderEffect: {
-          hasChoice: false,
-          directSkills: ["プルヒッター Lv1"],
-          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
-        },
-      },
-      {
-        stepName: "デート 6回目以降",
-        title: "虹谷彩理 06（追加デート）",
-        description: "気遣いの選択肢でやる気UP。",
-        pitcherEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "【大丈夫だと言って断る】",
-              skills: [],
-              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
-            },
-            {
-              text: "【お願いする】",
-              skills: [],
-              stats: "技術+16 / 精神+8 / 変化球+8 / やる気+1 / 好感度+25",
-            },
-          ],
-        },
-        fielderEffect: {
-          hasChoice: true,
-          choices: [
-            {
-              text: "【大丈夫だと言って断る】",
-              skills: [],
-              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
-            },
-            {
-              text: "【お願いする】",
-              skills: [],
-              stats: "技術+16 / 精神+8 / 敏捷+8 / やる気+1 / 好感度+25",
-            },
-          ],
-        },
-      },
-    ],
-    recommendPositions: ["投手（強心臓/クロスキャノン）", "野手全般（気迫ヘッド/エースキラー）"],
-    tips: "差し入れがパワドリンクDX（全快）なのが強力。投手・野手ともに実戦向きの金特が揃っています。",
-    color: "from-pink-600 to-rose-700",
+    recommendPositions: ["捕手 (ささやき戦術)", "外野手 (高速レーザー)", "投手 (主砲キラー/ドクターK)"],
+    tips: "捕手育成時は日和ミヨが最有力候補！デート4回目で【お祭りはちょっと苦手だった】を選ぶと貴重な『ささやき戦術Lv2』のコツを入手可能。外野手なら【友達と行ったことはあるよ】で『高速レーザーLv2』、投手なら『主砲キラーLv2』または『ドクターKLv2』を獲得できます。デート成功時の好感度上昇が+7と非常に高いため、デート完走が安定しやすいのも強みです。",
+    color: "from-emerald-600/80 to-teal-700/80",
   },
   {
     id: "motowaka",
     name: "本若 春陽",
     reading: "もとわか はるひ",
-    school: "アオハル学園",
-    firstSpaceTime: "アオハル学園",
-    howToMeet: "時空移動で「アオハル学園」を訪れると出現。練習を重ねて好感度を上げると告白イベントが発生します。",
-    howToDate: "デート1〜5回目でイベント進行。デート4回目で金特選択肢が発生します。",
-    lovePowerEffect: "やる気MAX＋練習効果UP＋消費体力低下。差し入れでパワドリンクを入手。",
+    school: "覇堂高校",
+    firstSpaceTime: "覇堂高校 (赤・黄ルート等で到達)",
+    howToMeet: "覇堂高校到達後、本若春陽がいる練習を追って好感度を上げると告白イベントが発生。",
+    howToDate: "彼女にした後、デートコマンドを実行。デート4回目で金特選択肢が発生します（成功時好感度+4）。",
+    lovePowerEffect: "練習時に確率でラブパワー発動。筋力・技術・精神バランスの良い経験点獲得をサポート。",
     pitcherGoldSkills: {
       top: {
-        choice: "【古代！】",
+        choice: "［上］【古代！】",
         skill: "怪物球威",
-        desc: "打たれても打球がものすごく飛びにくくなる重い球の最高峰（Lv2コツ）",
+        desc: "打たれても打球がすごく飛びにくくなる（Lv2コツ）",
       },
       bottom: {
-        choice: "【宇宙！】",
+        choice: "［下］【宇宙！】",
         skill: "勝利の星",
-        desc: "登板するとチーム全体に勝利をものすごく呼び込みやすくなる（Lv2コツ）",
+        desc: "登板するとチームに勝ちをものすごく呼び込みやすくなる（Lv2コツ）",
       },
     },
     fielderGoldSkills: {
       top: {
-        choice: "【古代！】",
+        choice: "［上］【古代！】",
         skill: "精神的支柱",
-        desc: "試合に出場しているだけでチーム全体の能力がものすごく上がる（Lv2コツ）",
+        desc: "試合に出場するとチームメイト全員の能力がものすごく上がる（Lv2コツ）",
       },
       bottom: {
-        choice: "【宇宙！】",
+        choice: "［下］【宇宙！】",
         skill: "トリックスター",
-        desc: "出塁すると相手投手にプレッシャーを与えて動揺させる（Lv2コツ）",
+        desc: "出塁するとピッチャーにプレッシャーをものすごく与える（Lv2コツ）",
       },
     },
     dateEvents: [
       {
         stepName: "デート 1回目",
         title: "本若春陽 01",
-        description: "顔合わせデート。",
+        description: "顔合わせデート。親密な関係への第一歩。",
         pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
         fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
       },
       {
         stepName: "デート 2回目",
         title: "本若春陽 02",
-        description: "親睦を深めるデート。",
+        description: "春陽とのデート。筋力と技術が手に入ります。",
         pitcherEffect: {
           hasChoice: false,
           directStats: "筋力+16 / 技術+8 / 精神+8 / 好感度+10",
@@ -1251,7 +1066,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 3回目",
         title: "本若春陽 03",
-        description: "お出かけ先の選択肢で特能コツを獲得！",
+        description: "おでかけ先の選択肢で特能コツ獲得！",
         pitcherEffect: {
           hasChoice: true,
           choices: [
@@ -1286,7 +1101,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 4回目",
         title: "本若春陽 04（金特イベント）",
-        description: "【最重要】古代か宇宙かの選択！最高峰の金特Lv2コツを獲得。",
+        description: "古代か宇宙かのロマン溢れる選択肢！野手最強バフ『精神的支柱』を狙えます。",
         isGoldSkill: true,
         pitcherEffect: {
           hasChoice: true,
@@ -1295,13 +1110,13 @@ export const heroinesData: HeroineInfo[] = [
               text: "［上］【古代！】",
               skills: ["✨ 怪物球威 Lv2"],
               stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+43",
-              note: "打球が飛ばなくなる重い球の最高峰！",
+              note: "被本塁打を劇的に減らす重い球の上位金特！",
             },
             {
               text: "［下］【宇宙！】",
               skills: ["✨ 勝利の星 Lv2"],
               stats: "筋力+24 / 技術+48 / 精神+24 / 好感度+40",
-              note: "登板でチームに勝ち運を呼ぶ！",
+              note: "チームを勝ちに導く勝ち運の上位金特！",
             },
           ],
         },
@@ -1312,13 +1127,13 @@ export const heroinesData: HeroineInfo[] = [
               text: "［上］【古代！】",
               skills: ["✨ 精神的支柱 Lv2"],
               stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
-              note: "出場でチーム全員の能力がUP！",
+              note: "【全野手超おすすめ】チーム全員の能力を底上げする超強力金特！",
             },
             {
               text: "［下］【宇宙！】",
               skills: ["✨ トリックスター Lv2"],
               stats: "筋力+24 / 技術+48 / 精神+24 / 好感度+40",
-              note: "出塁時に相手投手を激しく動揺！",
+              note: "出塁時の投手動揺金特！俊足リードオフマンに最適",
             },
           ],
         },
@@ -1326,7 +1141,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 5回目",
         title: "本若春陽 05",
-        description: "デート完走！全ステータス+40＆強力特能コツ。",
+        description: "デート完走！全ステータス大量獲得＆強力特能コツ。",
         pitcherEffect: {
           hasChoice: false,
           directSkills: ["対強打者◯ Lv1"],
@@ -1341,7 +1156,7 @@ export const heroinesData: HeroineInfo[] = [
       {
         stepName: "デート 6回目以降",
         title: "本若春陽 06（追加デート）",
-        description: "選択肢でやる気UP。",
+        description: "感触の選択肢でやる気UP＆能力獲得。",
         pitcherEffect: {
           hasChoice: true,
           choices: [
@@ -1374,14 +1189,199 @@ export const heroinesData: HeroineInfo[] = [
         },
       },
     ],
-    recommendPositions: ["投手（怪物球威/勝利の星）", "野手全般（精神的支柱/トリックスター）"],
-    tips: "野手最高峰のチームバフ金特「精神的支柱」や投手の「怪物球威」を獲得可能。アオハル学園経由の育成で大活躍します。",
-    color: "from-amber-600 to-orange-700",
+    recommendPositions: ["全野手 (精神的支柱)", "先発/抑え投手 (怪物球威/勝利の星)"],
+    tips: "野手育成で最も恩恵が大きい彼女候補のひとり。デート4回目で【古代！】を選択すると、チーム全員の能力を底上げする強力金特『精神的支柱Lv2』が手に入ります。投手でも【古代！】で打球を飛ばさせない『怪物球威Lv2』、【宇宙！】で『勝利の星Lv2』を獲得可能。デート5回目完走時には野手なら『広角打法Lv1』、投手なら『対強打者◯Lv1』が確定入手できます。",
+    color: "from-amber-600/80 to-orange-700/80",
+  },
+  {
+    id: "nijitani",
+    name: "虹谷 彩理",
+    reading: "にじたに さいり",
+    school: "天空中央高校",
+    firstSpaceTime: "天空中央高校 (中盤以降に到達)",
+    howToMeet: "天空中央高校到達後、彩理がいる練習コマンドを選択して好感度を上げると告白イベントが発生。",
+    howToDate: "彼女にした後、デートコマンドを実行。デート4回目で金特選択肢が発生します（成功時好感度+4）。",
+    lovePowerEffect: "練習時に確率でラブパワー発動。差し入れで貴重な回復アイテム『パワドリンクDX×1』を入手できます！",
+    pitcherGoldSkills: {
+      top: {
+        choice: "［上］【「あーん」し返す】",
+        skill: "強心臓",
+        desc: "得点圏にランナーがいるとものすごく能力が上がる（Lv2コツ）",
+      },
+      bottom: {
+        choice: "［下］【ノリノリで口を開ける】",
+        skill: "クロスキャノン",
+        desc: "対角線のコースに投球したときに能力がすごく上がる（Lv2コツ）",
+      },
+    },
+    fielderGoldSkills: {
+      top: {
+        choice: "［上］【「あーん」し返す】",
+        skill: "気迫ヘッド",
+        desc: "きわどいときにベースに頭からすべりこむ（Lv2コツ）",
+      },
+      bottom: {
+        choice: "［下］【ノリノリで口を開ける】",
+        skill: "エースキラー",
+        desc: "エース級のピッチャーと対戦したときに能力がすごく上がる（Lv2コツ）",
+      },
+    },
+    dateEvents: [
+      {
+        stepName: "デート 1回目",
+        title: "虹谷彩理 01",
+        description: "顔合わせデート。彩理とのデートがスタート。",
+        pitcherEffect: { hasChoice: false, directStats: "恩恵なし" },
+        fielderEffect: { hasChoice: false, directStats: "恩恵なし" },
+      },
+      {
+        stepName: "デート 2回目",
+        title: "虹谷彩理 02",
+        description: "親睦デート。投手は牽制◯Lv1のコツを獲得。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["牽制◯ Lv1"],
+          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directStats: "筋力+8 / 技術+16 / 精神+8 / 好感度+10",
+        },
+      },
+      {
+        stepName: "デート 3回目",
+        title: "虹谷彩理 03",
+        description: "買い出しの選択肢。野手はケガしにくさLv1のコツを獲得。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ついてきてもらう】",
+              skills: [],
+              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
+            },
+            {
+              text: "【ひとりでサッと買いに行く】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【ついてきてもらう】",
+              skills: ["ケガしにくさ Lv1"],
+              stats: "筋力+12 / 技術+32 / 精神+20 / 好感度+25",
+            },
+            {
+              text: "【ひとりでサッと買いに行く】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / 精神+32 / 好感度+25",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 4回目",
+        title: "虹谷彩理 04（金特イベント）",
+        description: "食事でのドキドキな選択肢で金特分岐！投手ピンチ強化や野手エースキラーを狙えます。",
+        isGoldSkill: true,
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【「あーん」し返す】",
+              skills: ["✨ 強心臓 Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
+              note: "ピンチ時に超絶強化！リリーフ・先発問わず強力",
+            },
+            {
+              text: "［下］【ノリノリで口を開ける】",
+              skills: ["✨ クロスキャノン Lv2"],
+              stats: "技術+24 / 精神+24 / 変化球+48 / 好感度+40",
+              note: "対角線のストレート・変化球を大幅強化！",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "［上］【「あーん」し返す】",
+              skills: ["✨ 気迫ヘッド Lv2"],
+              stats: "筋力+48 / 技術+24 / 精神+24 / 好感度+40",
+              note: "気迫のヘッドスライディングでセーフを勝ち取る！",
+            },
+            {
+              text: "［下］【ノリノリで口を開ける】",
+              skills: ["✨ エースキラー Lv2"],
+              stats: "技術+48 / 精神+24 / 敏捷+24 / 好感度+40",
+              note: "相手のエース級投手を完全に粉砕する強力打撃金特！",
+            },
+          ],
+        },
+      },
+      {
+        stepName: "デート 5回目",
+        title: "虹谷彩理 05",
+        description: "デート完走！全ステータス大量獲得＆強力特能コツ。",
+        pitcherEffect: {
+          hasChoice: false,
+          directSkills: ["奪三振 Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 変化球+40",
+        },
+        fielderEffect: {
+          hasChoice: false,
+          directSkills: ["プルヒッター Lv1"],
+          directStats: "筋力+40 / 技術+40 / 精神+40 / 敏捷+40",
+        },
+      },
+      {
+        stepName: "デート 6回目以降",
+        title: "虹谷彩理 06（追加デート）",
+        description: "申し出の選択肢でやる気UP＆能力獲得。",
+        pitcherEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【大丈夫だと言って断る】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【お願いする】",
+              skills: [],
+              stats: "技術+16 / 精神+8 / 変化球+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+        fielderEffect: {
+          hasChoice: true,
+          choices: [
+            {
+              text: "【大丈夫だと言って断る】",
+              skills: [],
+              stats: "筋力+12 / 技術+20 / やる気+1 / 好感度+25",
+            },
+            {
+              text: "【お願いする】",
+              skills: [],
+              stats: "技術+16 / 精神+8 / 敏捷+8 / やる気+1 / 好感度+25",
+            },
+          ],
+        },
+      },
+    ],
+    recommendPositions: ["投手 (強心臓/クロスキャノン)", "強打者/クリーンナップ野手 (エースキラー)"],
+    tips: "天空中央高校で出会える彼女。デート4回目で【「あーん」し返す】を選ぶと投手は『強心臓Lv2』、野手は『気迫ヘッドLv2』を取得。【ノリノリで口を開ける】を選ぶと投手は『クロスキャノンLv2』、野手は『エースキラーLv2』を取得できます。デート完走（5回目）で投手は『奪三振Lv1』、野手は『プルヒッターLv1』と全ステータス+40を獲得。さらにラブパワーの差し入れで『パワドリンクDX×1』をもらえるのも大きなメリットです。",
+    color: "from-purple-600/80 to-pink-700/80",
   },
 ];
 
 // ==========================================
-// 3. コンボイベントデータ (Game8参照)
+// 3. コンボイベント一覧 (Game8最新データ 完全準拠・全11組)
 // ==========================================
 
 export const comboEventsData: ComboEvent[] = [
@@ -1465,7 +1465,7 @@ export const comboEventsData: ComboEvent[] = [
       },
       {
         choiceName: "【松倉の話し相手になる】",
-        effects: ["クロスファイヤー Lv3", "ポーカーフェイス Lv3"],
+        effects: ["ポーカーフェイス Lv3", "クロスファイヤー Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 変化球+48",
       },
     ],
@@ -1498,13 +1498,13 @@ export const comboEventsData: ComboEvent[] = [
       },
       {
         choiceName: "【アイドルはナンパな存在】",
-        effects: ["投打躍動 Lv3", "存在感 Lv3"],
+        effects: ["存在感 Lv3", "投打躍動 Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 変化球+48",
       },
     ],
     fielderChoices: [
       {
-        choiceName: "【アイドルはナンパな存在じゃない！】",
+        choiceName: "【アイドルはナンパな存在（じゃない！）】",
         effects: ["ミート Lv3", "いぶし銀 Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 敏捷+48",
         isBasicStat: true,
@@ -1540,7 +1540,7 @@ export const comboEventsData: ComboEvent[] = [
     fielderChoices: [
       {
         choiceName: "【事情を話す】",
-        effects: ["送球 Lv3", "かく乱 Lv3"],
+        effects: ["かく乱 Lv3", "送球 Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 敏捷+48",
       },
       {
@@ -1553,21 +1553,21 @@ export const comboEventsData: ComboEvent[] = [
   {
     id: "combo-6",
     char1: { name: "美藤 千尋", school: "聖ジャスミン" },
-    char2: { name: "明智 光秀", school: "織田軍" },
+    char2: { name: "明智 光秀", school: "戦国高校 (織田軍)" },
     hasPitcherBasicStat: false,
     hasFielderBasicStat: true,
     pitcherChoices: [
       {
-        choiceName: "【選択肢なし】",
+        choiceName: "【選択肢なし (確定)】",
         effects: ["キレ◯ Lv3", "ゴロピッチャー Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 変化球+48",
       },
     ],
     fielderChoices: [
       {
-        choiceName: "【選択肢なし】",
+        choiceName: "【選択肢なし (確定)】",
         effects: ["パワー Lv3", "存在感 Lv3"],
-        stats: "筋力+48 / 技術+48 / 精神+48 / 敏捷+48",
+        stats: "筋力+48 / 技術+48 / 精神+48 / 変化球+48",
         isBasicStat: true,
         basicStatName: "パワー",
       },
@@ -1606,7 +1606,7 @@ export const comboEventsData: ComboEvent[] = [
   },
   {
     id: "combo-8",
-    char1: { name: "ゼンザイ", school: "織田軍" },
+    char1: { name: "ゼンザイ", school: "戦国高校 (織田軍)" },
     char2: { name: "ブラック", school: "花丸高校" },
     hasPitcherBasicStat: false,
     hasFielderBasicStat: false,
@@ -1638,7 +1638,7 @@ export const comboEventsData: ComboEvent[] = [
   {
     id: "combo-9",
     char1: { name: "十六夜 瑠菜", school: "アマゾネス" },
-    char2: { name: "東條 小次郎", school: "帝王実業" },
+    char2: { name: "東條 小次郎", school: "パワフル高校" },
     hasPitcherBasicStat: false,
     hasFielderBasicStat: false,
     pitcherChoices: [
@@ -1705,14 +1705,14 @@ export const comboEventsData: ComboEvent[] = [
     hasFielderBasicStat: false,
     pitcherChoices: [
       {
-        choiceName: "【選択肢なし】",
+        choiceName: "【選択肢なし (確定)】",
         effects: ["闘志 Lv3", "球速安定 Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 変化球+48",
       },
     ],
     fielderChoices: [
       {
-        choiceName: "【選択肢なし】",
+        choiceName: "【選択肢なし (確定)】",
         effects: ["逆境◯ Lv3", "アウトコースヒッター Lv3"],
         stats: "筋力+48 / 技術+48 / 精神+48 / 敏捷+48",
       },
@@ -1721,62 +1721,64 @@ export const comboEventsData: ComboEvent[] = [
 ];
 
 // ==========================================
-// 4. 攻略Tipsデータ
+// 4. 攻略・立ち回りTips集 (育成ノウハウ完全まとめ)
 // ==========================================
 
 export const strategyTips: StrategyTip[] = [
   {
-    title: "25ターン目 ★250分岐（憧堂景から金特）",
-    timing: "24〜25ターン目",
-    tag: "最重要分岐",
-    description: "25ターン目のイベントで選手能力が★250以上あると、憧堂景から金特のコツ（投手: 主砲キラー/怪物球威、野手: 一球入魂/広角砲）が獲得できます。",
+    title: "基礎能力Lv3コツのコンボを最優先で回収する",
+    timing: "中盤（10〜25ターン目）",
+    tag: "必須育成テクニック",
+    description:
+      "Game8攻略でも強く推奨されている通り、特定のコンボイベントでは基礎能力（球速・コントロール・スタミナ・ミート・パワー・守備力）のLv3コツが獲得できます。大量の経験点節約になるため、対象ペアは優先的に仲間にしましょう。",
     details: [
-      "24ターン目に分岐のアナウンスが入るため、ここで必ず能力アップ画面を開いて★250以上に調整すること。",
-      "経験点カンスト（999上限）に気を配りながら、必要なステータスに割り振る。",
+      "【野手・守備力Lv3】猪狩守 × 橘みずき → 選択肢【猪狩と話す】",
+      "【野手・パワーLv3】美藤千尋 × 明智光秀 → 選択肢なし（確定）",
+      "【野手・ミートLv3】神宮寺光 × 美一式高伊 → 選択肢【アイドルはナンパな存在】",
+      "【投手・球速Lv3】神宮寺光 × 美一式高伊 → 選択肢【アイドルになればモテモテだ！】",
+      "【投手・コントロールLv3】ハルキ × 早川あおい → 選択肢【話題をすり替える】",
+      "【投手・スタミナLv3】黒珠真 × 松倉宗光 → 選択肢【黒珠の練習相手になる】",
     ],
-    icon: "Star",
+    icon: "Award",
   },
   {
-    title: "時空移動の体力+25回復を最大活用",
-    timing: "常時（序盤〜終盤）",
-    tag: "立ち回り",
-    description: "時空を移動するごとにターン消費なしで体力が25回復します。",
+    title: "彼女のデート4回目は金特確定分岐",
+    timing: "中盤〜終盤（20〜35ターン目）",
+    tag: "金特獲得",
+    description:
+      "全4名の彼女ともに、デート4回目で金特Lv2コツの獲得選択肢が発生します。ポジションに応じた目的の金特を必ず事前に確認して選択肢を選びましょう。",
     details: [
-      "無駄に「休む」コマンドを踏まず、時空修復が完了したら即座に次へ移動する。",
-      "ラブパワー中の消費体力減少と合わせることで、育成期間中の練習回数を劇的に増やせます。",
+      "四条澄香: 【振り返ったら呪われる】で投手:精密機械Lv2 / 野手:外角必打Lv2、【声を上げたら呪われる】で投手:鉄腕Lv2 / 野手:左腕キラーLv2",
+      "日和ミヨ: 【友達と行ったことはあるよ】で投手:主砲キラーLv2 / 野手:高速レーザーLv2、【お祭りはちょっと苦手だった】で投手:ドクターKLv2 / 野手:ささやき戦術Lv2（捕手超推奨）",
+      "本若春陽: 【古代！】で投手:怪物球威Lv2 / 野手:精神的支柱Lv2（野手超推奨）、【宇宙！】で投手:勝利の星Lv2 / 野手:トリックスターLv2",
+      "虹谷彩理: 【「あーん」し返す】で投手:強心臓Lv2 / 野手:気迫ヘッドLv2、【ノリノリで口を開ける】で投手:クロスキャノンLv2 / 野手:エースキラーLv2",
     ],
-    icon: "Zap",
+    icon: "Heart",
   },
   {
-    title: "聖ジャスミン学園＆織田軍の早期到達",
-    timing: "11〜19ターン目安",
-    tag: "育成効率",
-    description: "基礎能力のコツを早期に回収して消費経験点を大幅に圧縮します。",
+    title: "デート完走（5回目）で全ステ+40＆青特Lv1",
+    timing: "終盤（35〜45ターン目）",
+    tag: "ステータス爆盛り",
+    description:
+      "デート5回目を完了すると、全ステータス（筋力・技術・精神・変化球/敏捷）が一気に+40ずつ獲得でき、強力な青特Lv1のコツも手に入ります。",
     details: [
-      "聖ジャスミン学園の特殊練習で基礎能力のコツを2回（1T目/4T目）取得。",
-      "織田軍の修復報酬でも基礎能力のコツを入手可能。後半の大量経験点獲得前にコツを揃えるのがカギ。",
+      "四条澄香: 投手『クロスファイヤーLv1』 / 野手『アベレージヒッターLv1』",
+      "日和ミヨ: 投手『ジャイロボールLv1』 / 野手『レーザービームLv1』",
+      "本若春陽: 投手『対強打者◯Lv1』 / 野手『広角打法Lv1』",
+      "虹谷彩理: 投手『奪三振Lv1』 / 野手『プルヒッターLv1』",
     ],
-    icon: "Compass",
+    icon: "Sparkles",
   },
   {
-    title: "時空Lv5で継承選手を最速加入（12〜15T）",
-    timing: "12〜15ターン目安",
-    tag: "金特量産",
-    description: "時空レベルが5に達すると、あらかじめ登録しておいた継承選手がチームに加入します。",
+    title: "経験点カンストの回避と★250調整",
+    timing: "24〜26ターン目（憧堂景戦前）",
+    tag: "仕様対策",
+    description:
+      "各経験点の所持上限（通常999pt）に達すると、以降のイベントや練習で得られるポイントが無駄になります。定期的に能力値へ変換して枠を空けておきましょう。",
     details: [
-      "強力な金特を持った継承選手を作成・LIVE選手からダウンロードしておく。",
-      "加入後は継承選手を追って練習し、金特のコツを複数回収する。",
+      "憧堂景から主砲キラーを獲得するには★250以上が必要。25ターン目前に能力アップを行い★250を確実に達成しておくこと。",
+      "コンボイベント発生時（全項目+48pt）の溢れにも注意。",
     ],
-    icon: "Users",
-  },
-  {
-    title: "時空Lv10到達で最終戦「テシータ」撃破",
-    timing: "50ターン目",
-    tag: "最終戦",
-    description: "50ターン目までに時空レベルを10まで上げておくと、ボスドンストレンジャーズ勝利後に真のボス「テシータドッペルシャドーズ」と対戦可能になります。",
-    details: [
-      "勝利することで大量の経験点を獲得でき、星999やオールS投打育成を決定づけられます。",
-    ],
-    icon: "Trophy",
+    icon: "AlertTriangle",
   },
 ];
